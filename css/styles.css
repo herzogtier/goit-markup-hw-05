@@ -626,8 +626,8 @@ h4 {
     color: var(--main-accent-color);
 }
 
-.link-header-text:hover:after,
-.link-header-text:focus:after {
+.link-header-text:hover::after,
+.link-header-text:focus::after {
     content: '';
     position: absolute;
     bottom: 0;
