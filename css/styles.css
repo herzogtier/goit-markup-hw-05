@@ -113,7 +113,9 @@ h4 {
 }
 
 .header-link-item {
-    line-height: 80px;
+    /* line-height: 80px; */
+    width: 100%;
+    min-height: 80px;
 }
 
 .header-link-item:not(:last-child) {
@@ -359,6 +361,17 @@ h4 {
     background-color: rgba(47, 48, 58, 0.8);
 }
 
+.work-card {
+    position: relative;
+}
+
+.work-card p {
+    position: absolute;
+    min-width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+
 /*
                         КЛАСС ДЛЯ ТЕКСТА НАЛОЖЕННОГО НА КАРТИНКУ (ПОКА ОТКЛЮЧЕН)
 */
@@ -452,11 +465,13 @@ h4 {
     /* background-color: rgba(255, 255, 255, 0.1); */
 }
 
-.team-socials-link:hover {
+.team-socials-link:hover,
+.team-socials-link:focus {
     background-color: #2196f3;
 }
 
-.team-socials-link:hover .socials-icon {
+.team-socials-link:hover .socials-icon,
+.team-socials-link:focus .socials-icon {
     fill: #ffffff;
 }
 
@@ -496,7 +511,8 @@ h4 {
     border-color: #2196f3;
 }
 
-.regular-customer-link:hover .regular-customer-icon {
+.regular-customer-link:hover .regular-customer-icon,
+.regular-customer-link:focus .regular-customer-icon {
     fill: #2196f3;
 }
 /*
@@ -550,7 +566,8 @@ h4 {
     overflow: hidden;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
@@ -596,7 +613,8 @@ h4 {
 }
 
 .link-header-text {
-    display: block;
+    position: relative;
+    display: flex;
     font-size: 14px;
     font-weight: 500;
     color: var(--header-text-color);
@@ -606,6 +624,18 @@ h4 {
 .link-header-text:hover,
 .link-header-text:focus {
     color: var(--main-accent-color);
+}
+
+.link-header-text:hover:after,
+.link-header-text:focus:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--main-accent-color);
+    border-radius: 2px;
 }
 
 .link-contact-text {
@@ -755,7 +785,8 @@ h4 {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.socials-link:hover {
+.socials-link:hover,
+.socials-link:focus {
     background-color: #2196f3;
 }
 
