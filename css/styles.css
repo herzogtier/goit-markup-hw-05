@@ -462,6 +462,7 @@ h4 {
     align-items: center;
     justify-content: center;
     color: #afb1b8;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     /* background-color: rgba(255, 255, 255, 0.1); */
 }
 
@@ -496,10 +497,12 @@ h4 {
     justify-content: center;
     border: 1px solid #afb1b8;
     border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .regular-customer-icon {
     fill: #afb1b8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* .regular-customer-icon:hover {
@@ -619,6 +622,7 @@ h4 {
     font-weight: 500;
     color: var(--header-text-color);
     line-height: 80px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-header-text:hover,
@@ -635,8 +639,15 @@ h4 {
     left: 0;
     height: 4px;
     width: 100%;
-    background-color: var(--main-accent-color);
     border-radius: 2px;
+    background-color: var(--main-accent-color);
+
+    /* transform: scaleX(0); */
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current::after {
+    transform: scaleX(1);
 }
 
 .link-contact-text {
@@ -784,6 +795,7 @@ h4 {
     justify-content: center;
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover,
