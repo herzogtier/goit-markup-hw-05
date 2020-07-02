@@ -626,6 +626,7 @@ h4 {
     color: var(--main-accent-color);
 }
 
+.current::after,
 .link-header-text:hover::after,
 .link-header-text:focus::after {
     content: '';
