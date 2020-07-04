@@ -619,17 +619,32 @@ h4 {
     color: var(--main-accent-color);
 }
 
+/*Синяя полоска внизу ссылок*/
 .current::after,
-.link-header-text:hover::after,
-.link-header-text:focus::after {
+.link-header-line::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
+
+    display: block;
     height: 4px;
     width: 100%;
+
     background-color: var(--main-accent-color);
     border-radius: 2px;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-header-line::after {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.link-header-line:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 .link-contact-text {
