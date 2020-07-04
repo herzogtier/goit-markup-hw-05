@@ -57,7 +57,9 @@ h4 {
 }
 
 /*
+
 класс контейнер
+
 */
 .container {
     margin-left: auto;
@@ -69,7 +71,9 @@ h4 {
 }
 
 /*
+
                                 КЛАССЫ ДЛЯ РАБОТЫ ХЕДЕРА
+
 */
 
 .header-flex-container,
@@ -132,7 +136,9 @@ h4 {
 }
 
 /*
+
                                 КЛАССЫ ДЛЯ БЛОКА ГЕРОЙ
+
 */
 .hero-container {
     margin-left: auto;
@@ -179,7 +185,9 @@ h4 {
 } */
 
 /*
+
                                 КЛАССЫ ДЛЯ РАБОТЫ ФУТЕРА
+
 */
 .footer-site {
     background-color: #2f303a;
@@ -255,7 +263,9 @@ h4 {
     margin-top: 28px;
 }
 /*
+
                                 КЛАССЫ ДЛЯ РАБОТЫ СЕКЦИИ "НАШИ ПРЕИМУЩЕСТВА"
+
 */
 
 /*
@@ -328,7 +338,9 @@ h4 {
 }
 
 /*
+
                         КЛАССЫ ДЛЯ РАБОТЫ СЕКЦИИ "ЧЕМ МЫ ЗАНИМАЕМСЯ"
+
 */
 
 .work-list-item {
@@ -376,7 +388,9 @@ h4 {
 } */
 
 /*
+
                         КЛАССЫ ДЛЯ РАБОТЫ СЕКЦИИ "НАША КОМАНДА"
+
 */
 
 /*
@@ -463,7 +477,9 @@ h4 {
 }
 
 /*
+
                             КЛАССЫ ДЛЯ РАБОТЫ С СЕКЦИЕЙ ПОСТОЯННЫХ КЛИЕНТОВ
+
 */
 .regular-customer-list-item {
     display: flex;
@@ -503,7 +519,9 @@ h4 {
     fill: #2196f3;
 }
 /*
+
                             Классы для страницы портфолио
+
 */
 .nav-project-styles {
     font-style: normal;
@@ -518,7 +536,6 @@ h4 {
     padding-left: 22px;
     padding-right: 22px;
     border-radius: 4px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-project-styles:hover,
@@ -555,11 +572,6 @@ h4 {
 .card:hover,
 .card:focus {
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
-}
-
-.card-img {
-    display: block;
-    /* outline: 1px solid tomato; */
 }
 
 .card-content {
@@ -610,7 +622,6 @@ h4 {
     font-weight: 500;
     color: var(--header-text-color);
     line-height: 80px;
-
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -619,17 +630,47 @@ h4 {
     color: var(--main-accent-color);
 }
 
-.current::after,
-.link-header-text:hover::after,
-.link-header-text:focus::after {
+.current {
+    content: '';
+    position: relative;
+}
+
+.current::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 4px;
+
+    border-radius: 2px;
+    background-color: var(--main-accent-color);
+}
+
+.link-header-text::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     height: 4px;
     width: 100%;
-    background-color: var(--main-accent-color);
     border-radius: 2px;
+    background-color: var(--main-accent-color);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* transform: scaleX(0); */
+}
+
+/* .link-header-text::after {
+} */
+
+.link-header-text:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 .link-contact-text {
@@ -682,6 +723,11 @@ h4 {
     display: block;
     color: var(--main-text-color);
     /* outline: 2px solid tomato; */
+}
+
+.card-img {
+    display: block;
+    /* outline: 1px solid tomato; */
 }
 
 .link-button {
